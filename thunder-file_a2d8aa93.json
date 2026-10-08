@@ -1,0 +1,305 @@
+{
+  "data": {
+    "curr_info": {
+      "default_time": "09:10:00",
+      "delayed_by": 68,
+      "geom": {
+        "coordinates": [
+          76.87615092680441,
+          30.878422320970213
+        ],
+        "crs": {
+          "properties": {
+            "name": "EPSG:4326"
+          },
+          "type": "name"
+        },
+        "type": "Point"
+      },
+      "in_btw_dist": null,
+      "last_updated_time": "2026-10-04T13:54:11.219000",
+      "next_stop_default_time": "09:10:00",
+      "next_stop_delayed": 68,
+      "next_stop_name": "Maharaja Agrasen University",
+      "status": "arrived at Maharaja Agrasen University",
+      "stop_name": "Maharaja Agrasen University",
+      "stop_order": 11,
+      "time_taken": null,
+      "verified": false,
+      "verified_by": "system",
+      "verified_person_id": null
+    },
+    "route_info": {
+      "route_id": 2,
+      "route_name": "Majri-to-MAU-by-Bypass",
+      "stops": [
+        {
+          "default_time": "08:00:00",
+          "delayed_by": 0,
+          "dist_from_start_m": 0,
+          "geom": {
+            "coordinates": [
+              76.87140883346443,
+              30.700202357543972
+            ],
+            "crs": {
+              "properties": {
+                "name": "EPSG:4326"
+              },
+              "type": "name"
+            },
+            "type": "Point"
+          },
+          "in_btw_dist": 2450,
+          "in_btw_time": 5.0,
+          "stop_id": 11,
+          "stop_name": "Majri Chowk",
+          "stop_order": 1,
+          "today_reached_time": null
+        },
+        {
+          "default_time": "08:05:00",
+          "delayed_by": 0,
+          "dist_from_start_m": 2450,
+          "geom": {
+            "coordinates": [
+              76.87349300816518,
+              30.707291749505725
+            ],
+            "crs": {
+              "properties": {
+                "name": "EPSG:4326"
+              },
+              "type": "name"
+            },
+            "type": "Point"
+          },
+          "in_btw_dist": 3750,
+          "in_btw_time": 8.0,
+          "stop_id": 12,
+          "stop_name": "Old Panchkula Lights",
+          "stop_order": 2,
+          "today_reached_time": null
+        },
+        {
+          "default_time": "08:13:00",
+          "delayed_by": 0,
+          "dist_from_start_m": 6200,
+          "geom": {
+            "coordinates": [
+              76.902691595807,
+              30.744589805504045
+            ],
+            "crs": {
+              "properties": {
+                "name": "EPSG:4326"
+              },
+              "type": "name"
+            },
+            "type": "Point"
+          },
+          "in_btw_dist": 3200,
+          "in_btw_time": 6.0,
+          "stop_id": 13,
+          "stop_name": "Chandimandir",
+          "stop_order": 3,
+          "today_reached_time": null
+        },
+        {
+          "default_time": "08:19:00",
+          "delayed_by": 68,
+          "dist_from_start_m": 9400,
+          "geom": {
+            "coordinates": [
+              76.90470947992625,
+              30.75649643428508
+            ],
+            "crs": {
+              "properties": {
+                "name": "EPSG:4326"
+              },
+              "type": "name"
+            },
+            "type": "Point"
+          },
+          "in_btw_dist": 4400,
+          "in_btw_time": 8.0,
+          "stop_id": 14,
+          "stop_name": "Amravati Enclave",
+          "stop_order": 4,
+          "today_reached_time": null
+        },
+        {
+          "default_time": "08:27:00",
+          "delayed_by": 68,
+          "dist_from_start_m": 13800,
+          "geom": {
+            "coordinates": [
+              76.90450807776675,
+              30.761347365733666
+            ],
+            "crs": {
+              "properties": {
+                "name": "EPSG:4326"
+              },
+              "type": "name"
+            },
+            "type": "Point"
+          },
+          "in_btw_dist": 3500,
+          "in_btw_time": 6.0,
+          "stop_id": 15,
+          "stop_name": "Surajpur",
+          "stop_order": 5,
+          "today_reached_time": null
+        },
+        {
+          "default_time": "08:33:00",
+          "delayed_by": 68,
+          "dist_from_start_m": 17300,
+          "geom": {
+            "coordinates": [
+              76.90533981420347,
+              30.764815789945995
+            ],
+            "crs": {
+              "properties": {
+                "name": "EPSG:4326"
+              },
+              "type": "name"
+            },
+            "type": "Point"
+          },
+          "in_btw_dist": 4200,
+          "in_btw_time": 8.0,
+          "stop_id": 16,
+          "stop_name": "Rampur Seori",
+          "stop_order": 6,
+          "today_reached_time": null
+        },
+        {
+          "default_time": "08:41:00",
+          "delayed_by": 68,
+          "dist_from_start_m": 21500,
+          "geom": {
+            "coordinates": [
+              76.88588229413406,
+              30.818285335245353
+            ],
+            "crs": {
+              "properties": {
+                "name": "EPSG:4326"
+              },
+              "type": "name"
+            },
+            "type": "Point"
+          },
+          "in_btw_dist": 4600,
+          "in_btw_time": 8.0,
+          "stop_id": 17,
+          "stop_name": "Pinjore Bypass",
+          "stop_order": 7,
+          "today_reached_time": null
+        },
+        {
+          "default_time": "08:49:00",
+          "delayed_by": 68,
+          "dist_from_start_m": 26100,
+          "geom": {
+            "coordinates": [
+              76.8711026187834,
+              30.837087338051333
+            ],
+            "crs": {
+              "properties": {
+                "name": "EPSG:4326"
+              },
+              "type": "name"
+            },
+            "type": "Point"
+          },
+          "in_btw_dist": 3700,
+          "in_btw_time": 6.0,
+          "stop_id": 18,
+          "stop_name": "Garidan",
+          "stop_order": 8,
+          "today_reached_time": null
+        },
+        {
+          "default_time": "08:55:00",
+          "delayed_by": 68,
+          "dist_from_start_m": 29800,
+          "geom": {
+            "coordinates": [
+              76.85833869619255,
+              30.856545700488894
+            ],
+            "crs": {
+              "properties": {
+                "name": "EPSG:4326"
+              },
+              "type": "name"
+            },
+            "type": "Point"
+          },
+          "in_btw_dist": 3200,
+          "in_btw_time": 6.0,
+          "stop_id": 19,
+          "stop_name": "Jholuwal",
+          "stop_order": 9,
+          "today_reached_time": null
+        },
+        {
+          "default_time": "09:01:00",
+          "delayed_by": 68,
+          "dist_from_start_m": 33000,
+          "geom": {
+            "coordinates": [
+              76.8479106335982,
+              30.875197683488764
+            ],
+            "crs": {
+              "properties": {
+                "name": "EPSG:4326"
+              },
+              "type": "name"
+            },
+            "type": "Point"
+          },
+          "in_btw_dist": 4600,
+          "in_btw_time": 9.0,
+          "stop_id": 20,
+          "stop_name": "Nanakpur Bus Stand",
+          "stop_order": 10,
+          "today_reached_time": null
+        },
+        {
+          "default_time": "09:10:00",
+          "delayed_by": 68,
+          "dist_from_start_m": 37600,
+          "geom": {
+            "coordinates": [
+              76.87615092680441,
+              30.878422320970213
+            ],
+            "crs": {
+              "properties": {
+                "name": "EPSG:4326"
+              },
+              "type": "name"
+            },
+            "type": "Point"
+          },
+          "in_btw_dist": null,
+          "in_btw_time": null,
+          "stop_id": 21,
+          "stop_name": "Maharaja Agrasen University",
+          "stop_order": 11,
+          "today_reached_time": null
+        }
+      ]
+    }
+  },
+  "message": "Fetched ETA successfully",
+  "success": true
+}
