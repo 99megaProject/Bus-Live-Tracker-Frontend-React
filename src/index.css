@@ -98,3 +98,61 @@ small, .eta, dt, .muted, .field span { font-family: "Space Mono", monospace; }
 .detail { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0 0; padding-top: 12px; border-top: 1px solid #eee; }
 .detail dt { font-size: 11px; color: var(--muted); }
 .detail dd { margin: 2px 0 0; font-weight: 600; font-size: 14px; }
+
+
+
+/* ---------- Auth ---------- */
+.login { min-height: 100vh; display: grid; place-items: center; padding: 20px; }
+.auth-card {
+  width: 100%; max-width: 400px; background: var(--card); border: 2px solid var(--neutral);
+  border-radius: 20px; padding: 22px; box-shadow: 4px 4px 0 var(--neutral);
+}
+.seg { display: flex; border: 2px solid var(--neutral); border-radius: 14px; overflow: hidden; background: #fff; margin: 4px 0 16px; }
+.seg button { flex: 1; padding: 10px 0; border: 0; background: transparent; font: inherit; font-weight: 600; cursor: pointer; }
+.seg button.on { background: var(--primary); color: #fff; }
+.btn.block { align-self: stretch; width: 100%; text-align: center; margin-top: 8px; font: inherit; font-weight: 600; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.pw { position: relative; }
+.pw input { width: 100%; padding-right: 44px; }
+.eye { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: none; border: 0; color: var(--muted); cursor: pointer; display: grid; place-items: center; padding: 6px; }
+
+/* ---------- ETA extras ---------- */
+.tag { margin-left: 8px; padding: 2px 6px; border-radius: 8px; background: var(--secondary); color: #fff; font-size: 10px; vertical-align: middle; }
+.notice { background: #d1fae5; color: #065f46; padding: 12px; border-radius: 12px; margin-bottom: 12px; }
+.sync { display: flex; align-items: center; gap: 6px; margin: 0 0 12px; font-size: 12px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; padding-top: 12px; border-top: 1px solid #eee; }
+.act {
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 12px;
+  border: 2px solid var(--neutral); background: #fff; color: var(--neutral);
+  font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+}
+.act.ok { background: var(--secondary); color: #fff; }
+.act.dark { background: var(--neutral); color: #fff; }
+.act:disabled { opacity: .5; cursor: not-allowed; }
+
+/* ---------- Empty state ---------- */
+.empty { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; padding: 32px 8px; }
+.empty h2 { font-family: "Space Grotesk", sans-serif; margin: 8px 0 0; }
+.empty .muted { max-width: 320px; }
+
+
+
+/* ---------- Admin ---------- */
+.admin-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.form-card { max-width: none; margin-top: 8px; }
+.form-grid { display: grid; grid-template-columns: 1fr; column-gap: 14px; }
+@media (min-width: 640px) {
+  .form-grid { grid-template-columns: 1fr 1fr; }
+  .form-grid .span2 { grid-column: 1 / -1; }
+}
+.field select, .field textarea {
+  padding: 12px; border-radius: 12px; border: 1px solid #d1d5db; font-size: 16px;
+  font-family: inherit; background: #fff; color: inherit; width: 100%;
+}
+.field textarea { font-family: "Space Mono", monospace; font-size: 14px; resize: vertical; }
+.field input[readonly] { background: #f3f4f6; }
+.gen { align-self: flex-start; font-size: 12px; color: var(--primary); }
+.hint { display: flex; align-items: center; gap: 6px; grid-column: 1 / -1; margin: 0 0 4px; }
+.recent { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 8px; }
+.recent li { display: flex; justify-content: space-between; align-items: center; background: var(--card); border-radius: 14px; padding: 10px 14px; font-size: 14px; }
+.seg button { font-size: 14px; } /* fits four tabs on the login card */

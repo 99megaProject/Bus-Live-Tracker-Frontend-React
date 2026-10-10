@@ -1,19 +1,77 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import Home from "./pages/Home";
+import { NavLink, Navigate, Outlet, Route, Routes } from "react-router-dom";
+import { Clock, Settings as SettingsIcon, ShieldCheck } from "lucide-react";
+import { AuthProvider, useAuth } from "./auth/AuthContext";
+import RequireAuth from "./auth/RequireAuth";
+import Login from "./pages/Login";
 import EtaChart from "./pages/EtaChart";
 import Settings from "./pages/Settings";
+import AdminPanel from "./pages/AdminPanel";
+
+const MEMBER = ["stu", "tea", "driv"];
+const NAV = [
+  { to: "/", label: "ETA", Icon: Clock, end: true, roles: MEMBER },
+  { to: "/settings", label: "Settings", Icon: SettingsIcon, roles: MEMBER },
+  { to: "/admin", label: "Admin", Icon: ShieldCheck, roles: ["admin"] },
+];
+
+function Layout() {
+  const { user } = useAuth();
+  return (
+    <div className="layout">
+      <nav className="nav">
+        <div className="brand">Bus Tracker</div>
+        {NAV.filter((n) => n.roles.includes(user.role)).map(({ to, label, Icon, end }) => (
+          <NavLink
+            key={to}
+            to={to}
+            end={end}
+            className={({ isActive }) => `nav-item${isActive ? " active" : ""}`}
+          >
+            <Icon size={20} />
+            <span>{label}</span>
+          </NavLink>
+        ))}
+      </nav>
+      <main className="content">
+        <Outlet />
+      </main>
+    </div>
+  );
+}
+
+// "/" -> admins go to their panel, everyone else sees the ETA chart
+function Home() {
+  const { user } = useAuth();
+  return user.role === "admin" ? <Navigate to="/admin" replace /> : <EtaChart />;
+}
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <AuthProvider>
       <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/eta" element={<EtaChart />} />
-          <Route path="/settings" element={<Settings />} />
+        <Route path="/login" element={<Login />} />
+
+        <Route
+          element={
+            <RequireAuth>
+              <Layout />
+            </RequireAuth>
+          }
+        >
+          <Route index element={<Home />} />
+          <Route path="settings" element={<Settings />} />
+          <Route
+            path="admin"
+            element={
+              <RequireAuth roles={["admin"]}>
+                <AdminPanel />
+              </RequireAuth>
+            }
+          />
         </Route>
+
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </BrowserRouter>
+    </AuthProvider>
   );
 }
