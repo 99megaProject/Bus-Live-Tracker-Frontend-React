@@ -1,4 +1,3 @@
-// const BASE_URL = import.meta.env.VITE_API_URL || "http://10.133.200.19:5000/api";
 const BASE_URL = import.meta.env.VITE_API_URL || "/api"; // proxied by Vite
 // const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 

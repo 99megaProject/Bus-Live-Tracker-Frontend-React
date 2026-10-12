@@ -32,6 +32,5 @@ export const getEtaData = (busId) => request(`/bus/chart/${busId}`);
 export const getCurrInfo = (busId) => request(`/bus-curr-info/${busId}`);
 
 // ---- contribution (ASSUMED body: { bus_number, stop_id, status }) ----
-export const sendContribution = (payload) => post("/contribution", payload);
-export const contributionNext = (payload) =>
-  post("/contribution-next", payload, true);
+export const sendContribution = (payload) => post("/contribution", payload, true);
+export const contributionNext = (payload) => post("/contribution-next", payload, true);

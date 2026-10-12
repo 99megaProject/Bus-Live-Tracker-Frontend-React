@@ -156,3 +156,33 @@ small, .eta, dt, .muted, .field span { font-family: "Space Mono", monospace; }
 .recent { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 8px; }
 .recent li { display: flex; justify-content: space-between; align-items: center; background: var(--card); border-radius: 14px; padding: 10px 14px; font-size: 14px; }
 .seg button { font-size: 14px; } /* fits four tabs on the login card */
+
+
+
+/* ---------- Contribute panel ---------- */
+.contrib {
+  display: flex; flex-direction: column; gap: 4px; background: var(--card);
+  border: 2px solid var(--neutral); border-radius: 20px; padding: 14px; margin: 0 0 20px;
+}
+.contrib small { color: var(--primary); font-size: 11px; }
+.contrib .muted { margin: 2px 0 0; }
+
+/* ---------- Profile ---------- */
+.avatar {
+  flex: none; width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center;
+  background: var(--primary); color: #fff; border: 2px solid var(--neutral);
+  font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 22px;
+}
+.profile-detail { background: var(--card); border-radius: 16px; padding: 14px; margin: 0 0 20px; border-top: 0; }
+.profile-detail dd { word-break: break-word; }
+.btn.with-icon { display: inline-flex; align-items: center; gap: 8px; font: inherit; font-weight: 600; }
+
+
+/* ---------- Settings / PWA ---------- */
+.h2 { font-family: "Space Grotesk", sans-serif; font-size: 18px; margin: 0 0 4px; }
+.btn.danger { background: #b91c1c; }
+.confirm-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.offline {
+  display: flex; align-items: center; gap: 8px; background: #fef3c7; color: #92400e;
+  padding: 10px 12px; border-radius: 12px; margin-bottom: 12px; font-size: 14px;
+}

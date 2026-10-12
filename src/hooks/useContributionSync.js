@@ -1,14 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { contributionNext } from "../api/services";
+import { getPosition } from "../utils/geo";
 
 const INTERVAL_MS = 15000;
 const MAX_ERRORS = 4;
 const MAX_RUN_MS = 30 * 60 * 1000;
-// Edit to match the flag your backend sends (checked on body and body.data)
-const TERMINATION_KEYS = ["terminate", "terminated", "done", "completed", "finished", "stop"];
 
-const isTerminated = (res) =>
-  [res, res?.data].some((o) => o && TERMINATION_KEYS.some((k) => o[k] === true));
+const isTerminated = (res) => res?.data?.terminate === true || res?.terminate === true;
 
 export default function useContributionSync() {
   const [syncing, setSyncing] = useState(false);
@@ -21,9 +19,10 @@ export default function useContributionSync() {
     setSyncing(false);
   }, []);
 
+  // base = { bus_number, stop_id }; location is read fresh on every tick
   const start = useCallback(
-    (payload, onUpdate) => {
-      stop(); // a new contribution replaces the previous loop
+    (base, onTick) => {
+      stop(); // a new report replaces the previous loop
       const mine = token.current;
       const began = Date.now();
       let errors = 0;
@@ -31,14 +30,17 @@ export default function useContributionSync() {
 
       const tick = async () => {
         try {
-          const res = await contributionNext(payload);
+          const pos = await getPosition();
+          if (mine !== token.current) return;
+          const res = await contributionNext({ ...base, lat: pos.lat, lon: pos.lon });
           if (mine !== token.current) return;
           errors = 0;
-          onUpdate?.(res);
+          onTick?.(res);
           if (isTerminated(res)) return stop();
         } catch (e) {
           if (mine !== token.current) return;
-          if (e.status === 401 || ++errors >= MAX_ERRORS) return stop();
+          // 401 = session gone, code 1 = location permission denied -> no point retrying
+          if (e.status === 401 || e.code === 1 || ++errors >= MAX_ERRORS) return stop();
         }
         if (Date.now() - began > MAX_RUN_MS) return stop();
         timer.current = setTimeout(tick, INTERVAL_MS);
@@ -49,7 +51,7 @@ export default function useContributionSync() {
     [stop]
   );
 
-  useEffect(() => stop, [stop]); // cleanup on unmount
+  useEffect(() => stop, [stop]);
 
   return { syncing, start, stop };
 }

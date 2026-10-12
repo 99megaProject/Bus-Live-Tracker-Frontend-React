@@ -1,10 +1,11 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { Home, Route, Settings } from "lucide-react";
+import { Home, Route, Settings , User} from "lucide-react";
 
 const NAV = [
   { to: "/", label: "Home", icon: Home },
   { to: "/eta", label: "ETA Chart", icon: Route },
   { to: "/settings", label: "Settings", icon: Settings },
+ { to: "/profile", label: "Profile", Icon: User, roles: MEMBER }
 ];
 
 export default function Layout() {
