@@ -1,4 +1,5 @@
 const BASE_URL = import.meta.env.VITE_API_URL || "/api"; // proxied by Vite
+console.log("xyzn");
 // const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 
 // full = true returns the whole body (needed for flags that live outside `data`)
